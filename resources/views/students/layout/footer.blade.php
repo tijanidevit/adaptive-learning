@@ -143,12 +143,12 @@
                                 <li>
                                     <a href="index.html">
                                         <div class="footer_logo">
-                                            <img src="images/logo1.svg" alt="">
+                                            <img src="{{asset('assets/images/logo1.svg')}}" alt="">
                                         </div>
                                     </a>
                                 </li>
                                 <li>
-                                    <p>© 2020 <strong>Cursus</strong>. All Rights Reserved.</p>
+                                    <p>© {{date('Y')}} <strong>Cursus</strong>. All Rights Reserved.</p>
                                 </li>
                             </ul>
                         </div>

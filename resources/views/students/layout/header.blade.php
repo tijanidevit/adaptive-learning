@@ -7,7 +7,7 @@
         <span class="collapse_menu--label"></span>
     </button>
     <div class="main_logo" id="logo">
-        <a href="index.html"><img src="{{asset('assets/images/logo.svg')}} alt=""></a>
+        <a href="index.html"><img src="{{asset('assets/images/logo.svg')}}" alt=""></a>
         <a href="index.html"><img class="logo-inverse" src="{{asset('assets/images/ct_logo.svg')}}" alt=""></a>
     </div>
     <div class="top-category">
