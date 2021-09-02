@@ -2,6 +2,9 @@
 @include('students.layout.header')
 @include('students.layout.sidebar')
 
-@yield('body')
 
+<div class="wrapper">
+@yield('body')
 @include('students.layout.footer')
+</div>
+

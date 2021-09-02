@@ -3,7 +3,5 @@
 @section('title') Homepage @endsection
 
 @section('body')
-    <div class="wrapper">
-        Homepage
-    </div>
+    Homepage
 @endsection
