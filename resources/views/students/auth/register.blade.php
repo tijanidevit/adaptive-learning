@@ -10,8 +10,8 @@
         <div class="row justify-content-lg-center justify-content-md-center">
             <div class="col-lg-12">
                 <div class="main_logo25" id="logo">
-                    <a href="index.html"><img src="images/logo.svg" alt=""></a>
-                    <a href="index.html"><img class="logo-inverse" src="images/ct_logo.svg" alt=""></a>
+                    <a href="./"><img src="{{asset('assets/images/logo.svg')}}" alt=""></a>
+                    <a href="./"><img class="logo-inverse" src="{{asset('assets/images/ct_logo.svg')}}" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-8">
@@ -21,17 +21,17 @@
                     <form>
                         <div class="ui search focus">
                             <div class="ui left icon input swdh11 swdh19">
-                                <input class="prompt srch_explore" type="text" name="fullname" value="" id="id_fullname" required="" maxlength="64" placeholder="Full Name">
+                                <input class="prompt srch_explore" type="text" name="fullname" value="{{old('fullname')}}" id="id_fullname" required="" maxlength="64" placeholder="Full Name">
                             </div>
                         </div>
                         <div class="ui search focus mt-15">
                             <div class="ui left icon input swdh11 swdh19">
-                                <input class="prompt srch_explore" type="email" name="email" value="" id="id_email" required="" maxlength="64" placeholder="Email Address">
+                                <input class="prompt srch_explore" type="email" name="email" value="{{old('email')}}" id="id_email" required="" maxlength="64" placeholder="Email Address">
                             </div>
                         </div>
                         <div class="ui search focus mt-15">
                             <div class="ui left icon input swdh11 swdh19">
-                                <input class="prompt srch_explore" type="password" name="password" value="" id="id_password" required="" maxlength="64" placeholder="Password">
+                                <input class="prompt srch_explore" type="password" name="password" value="{{old('password')}}" id="id_password" required="" maxlength="64" placeholder="Password">
                             </div>
                         </div>
                         <div class="ui form mt-30 checkbox_sign">
@@ -45,9 +45,9 @@
                         <button class="login-btn" type="submit">Next</button>
                     </form>
                     <p class="sgntrm145">By signing up, you agree to our <a href="terms_of_use.html">Terms of Use</a> and <a href="terms_of_use.html">Privacy Policy</a>.</p>
-                    <p class="mb-0 mt-30">Already have an account? <a href="sign_in.html">Log In</a></p>
+                    <p class="mb-0 mt-30">Already have an account? <a href="./login">Log In</a></p>
                 </div>
-                <div class="sign_footer"><img src="images/sign_logo.png" alt="">© {{date('Y')}} <strong>Cursus</strong>. All Rights Reserved.</div>
+                <div class="sign_footer"><img src="{{asset('assets/images/sign_logo.png')}}" alt="">© {{date('Y')}} <strong>Cursus</strong>. All Rights Reserved.</div>
             </div>
         </div>
     </div>
