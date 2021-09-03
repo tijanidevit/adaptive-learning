@@ -16,36 +16,36 @@
             </div>
             <div class="col-lg-6 col-md-8">
                 <div class="sign_form">
-                    <h2>Welcome Back</h2>
-                    <p>Log In to Your Edututs+ Account!</p>
-                    <button class="social_lnk_btn color_btn_fb"><i class="uil uil-facebook-f"></i>Continue with Facebook</button>
-                    <button class="social_lnk_btn mt-15 color_btn_tw"><i class="uil uil-twitter"></i>Continue with Twitter</button>
-                    <button class="social_lnk_btn mt-15 color_btn_go"><i class="uil uil-google"></i>Continue with Google</button>
+                    <h2>Welcome to Cursus</h2>
+                    <p>Sign Up and Start Learning!</p>
                     <form>
-                        <div class="ui search focus mt-15">
-                            <div class="ui left icon input swdh95">
-                                <input class="prompt srch_explore" type="email" name="email" value="" id="id_email" required="" maxlength="64" placeholder="Email Address">
-                                <i class="uil uil-envelope icon icon2"></i>
+                        <div class="ui search focus">
+                            <div class="ui left icon input swdh11 swdh19">
+                                <input class="prompt srch_explore" type="text" name="fullname" value="" id="id_fullname" required="" maxlength="64" placeholder="Full Name">
                             </div>
                         </div>
                         <div class="ui search focus mt-15">
-                            <div class="ui left icon input swdh95">
+                            <div class="ui left icon input swdh11 swdh19">
+                                <input class="prompt srch_explore" type="email" name="email" value="" id="id_email" required="" maxlength="64" placeholder="Email Address">
+                            </div>
+                        </div>
+                        <div class="ui search focus mt-15">
+                            <div class="ui left icon input swdh11 swdh19">
                                 <input class="prompt srch_explore" type="password" name="password" value="" id="id_password" required="" maxlength="64" placeholder="Password">
-                                <i class="uil uil-key-skeleton-alt icon icon2"></i>
                             </div>
                         </div>
                         <div class="ui form mt-30 checkbox_sign">
                             <div class="inline field">
                                 <div class="ui checkbox mncheck">
                                     <input type="checkbox" tabindex="0" class="hidden">
-                                    <label>Remember Me</label>
+                                    <label>I’m in for emails with exciting discounts and personalized recommendations</label>
                                 </div>
                             </div>
                         </div>
-                        <button class="login-btn" type="submit">Sign In</button>
+                        <button class="login-btn" type="submit">Next</button>
                     </form>
-                    <p class="sgntrm145">Or <a href="forgot_password.html">Forgot Password</a>.</p>
-                    <p class="mb-0 mt-30 hvsng145">Don't have an account? <a href="sign_up.html">Sign Up</a></p>
+                    <p class="sgntrm145">By signing up, you agree to our <a href="terms_of_use.html">Terms of Use</a> and <a href="terms_of_use.html">Privacy Policy</a>.</p>
+                    <p class="mb-0 mt-30">Already have an account? <a href="sign_in.html">Log In</a></p>
                 </div>
                 <div class="sign_footer"><img src="images/sign_logo.png" alt="">© {{date('Y')}} <strong>Cursus</strong>. All Rights Reserved.</div>
             </div>
