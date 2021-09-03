@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 Route::get('/student', function () {
     return view('students.home');
-});
+})->name('student_home');
 Route::get('/student/login', function () {
     return view('students.auth.login');
 });
