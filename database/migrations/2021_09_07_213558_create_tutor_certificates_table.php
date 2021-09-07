@@ -15,6 +15,10 @@ class CreateTutorCertificatesTable extends Migration
     {
         Schema::create('tutor_certificates', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('tutor_id');
+            $table->string('certificate_link');
+            $table->string('course_completed');
+            $table->string('awardee');
             $table->timestamps();
         });
     }

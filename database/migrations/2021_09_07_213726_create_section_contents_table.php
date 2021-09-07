@@ -15,6 +15,11 @@ class CreateSectionContentsTable extends Migration
     {
         Schema::create('section_contents', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('course_section_id');
+            $table->string('title');
+            $table->string('duration');
+            $table->string('video_file');
+            $table->text('transcript');
             $table->timestamps();
         });
     }

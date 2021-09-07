@@ -15,6 +15,9 @@ class CreateQuizOptionsTable extends Migration
     {
         Schema::create('quiz_options', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('section_quiz_id');
+            $table->string('option');
+            $table->integer('is_answer');
             $table->timestamps();
         });
     }

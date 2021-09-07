@@ -15,6 +15,10 @@ class CreateTutorEarningsTable extends Migration
     {
         Schema::create('tutor_earnings', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('tutor_id');
+            $table->unsignedBigInteger('course_id');
+            $table->decimal('amount_earned');
+
             $table->timestamps();
         });
     }

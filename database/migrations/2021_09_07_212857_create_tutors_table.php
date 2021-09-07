@@ -15,6 +15,10 @@ class CreateTutorsTable extends Migration
     {
         Schema::create('tutors', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('cv_link');
+            $table->decimal('balance');
+            $table->integer('approval_status');
             $table->timestamps();
         });
     }

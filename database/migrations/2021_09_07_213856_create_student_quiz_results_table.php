@@ -15,6 +15,9 @@ class CreateStudentQuizResultsTable extends Migration
     {
         Schema::create('student_quiz_results', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('student_id');
+            $table->unsignedBigInteger('section_quiz_id');
+            $table->integer('student_score');
             $table->timestamps();
         });
     }

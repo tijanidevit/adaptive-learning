@@ -15,6 +15,8 @@ class CreatePeerStudentsTable extends Migration
     {
         Schema::create('peer_students', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('student_id');
+            $table->unsignedBigInteger('peer_id');
             $table->timestamps();
         });
     }

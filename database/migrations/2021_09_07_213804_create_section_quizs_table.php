@@ -15,6 +15,9 @@ class CreateSectionQuizsTable extends Migration
     {
         Schema::create('section_quizs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('course_section_id');
+            $table->string('question');
+            $table->integer('point');
             $table->timestamps();
         });
     }

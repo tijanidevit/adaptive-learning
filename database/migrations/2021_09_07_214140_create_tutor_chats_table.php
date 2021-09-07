@@ -15,6 +15,9 @@ class CreateTutorChatsTable extends Migration
     {
         Schema::create('tutor_chats', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('tutor_id');
+            $table->unsignedBigInteger('student_id');
+            $table->string('amount_cashout');
             $table->timestamps();
         });
     }

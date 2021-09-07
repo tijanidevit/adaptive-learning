@@ -15,6 +15,9 @@ class CreateTutorCashoutsTable extends Migration
     {
         Schema::create('tutor_cashouts', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('tutor_id');
+            $table->decimal('amount_cashout');
+            $table->decimal('balance');
             $table->timestamps();
         });
     }
