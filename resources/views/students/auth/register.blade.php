@@ -18,16 +18,27 @@
                 <div class="sign_form">
                     <h2>Welcome to Cursus</h2>
                     <p>Sign Up and Start Learning!</p>
-                    <form>
+
+                    <form method="post" action="{{route('student_login')}}">
+                        @csrf
                         <div class="ui search focus">
                             <div class="ui left icon input swdh11 swdh19">
-                                <input class="prompt srch_explore" type="text" name="fullname" value="{{old('fullname')}}" id="id_fullname" required="" maxlength="64" placeholder="Full Name">
+                                <input class="prompt srch_explore" type="text" name="first_name" value="{{old('first_name')}}" id="id_first_namee" required="" maxlength="64" placeholder="First Name">
                             </div>
+                            @error('first_name'){{$message}}@enderror
+                        </div>
+                        <br />
+                        <div class="ui search focus">
+                            <div class="ui left icon input swdh11 swdh19">
+                                <input class="prompt srch_explore" type="text" name="other_names" value="{{old('other_names')}}" id="id_other_name" required="" maxlength="64" placeholder="Other Names">
+                            </div>
+                            @error('other_names'){{$message}}@enderror
                         </div>
                         <div class="ui search focus mt-15">
                             <div class="ui left icon input swdh11 swdh19">
                                 <input class="prompt srch_explore" type="email" name="email" value="{{old('email')}}" id="id_email" required="" maxlength="64" placeholder="Email Address">
                             </div>
+
                         </div>
                         <div class="ui search focus mt-15">
                             <div class="ui left icon input swdh11 swdh19">

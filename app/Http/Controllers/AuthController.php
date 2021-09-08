@@ -46,11 +46,12 @@ class AuthController extends Controller
         return redirect('/');
     }
 
-
     public function registerStudent(Request $request)
     {
-        $data = verifyData();
-        $data['role'] = 0;
+        $data = $this->verifyData();
+
+        $data['role'] = 2;
+
         $user = $this->create($data);
         $this->postRegister($user);
     }
@@ -59,20 +60,22 @@ class AuthController extends Controller
     {
         Auth::login($user, $remember = true);
         if ($user->role == 1){
-            return redirect()->intended('tutors/dashboard');
+            return redirect()->to('tutors/dashboard');
         }
         if ($user->role == 2){
-            return redirect()->intended('students/dashboard');
+            return redirect()->to('students/dashboard');
         }
         if ($user->role == 0){
-            return redirect()->intended('admin/dashboard');
+            return redirect()->to('admin/dashboard');
         }
+
     }
 
 
-    public function create(array $data)
+    public function create($data)
     {
         $data['password'] = Hash::make($data['password']);
+//        dd($data);
         return User::create($data);
     }
 
