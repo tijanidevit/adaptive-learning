@@ -25,26 +25,27 @@
                             <div class="ui left icon input swdh11 swdh19">
                                 <input class="prompt srch_explore" type="text" name="first_name" value="{{old('first_name')}}" id="id_first_namee" required="" maxlength="64" placeholder="First Name">
                             </div>
-                            @error('first_name'){{$message}}@enderror
+                            @error('first_name')<div class="text-danger">{{$message}}</div>@enderror
                         </div>
                         <br />
                         <div class="ui search focus">
                             <div class="ui left icon input swdh11 swdh19">
                                 <input class="prompt srch_explore" type="text" name="other_names" value="{{old('other_names')}}" id="id_other_name" required="" maxlength="64" placeholder="Other Names">
                             </div>
-                            @error('other_names'){{$message}}@enderror
+                            @error('other_names')<div class="text-danger">{{$message}}</div>@enderror
                         </div>
                         <div class="ui search focus mt-15">
                             <div class="ui left icon input swdh11 swdh19">
                                 <input class="prompt srch_explore" type="email" name="email" value="{{old('email')}}" id="id_email" required="" maxlength="64" placeholder="Email Address">
                             </div>
-                            @error('email'){{$message}}@enderror
+                            @error('email')<div class="text-danger">{{$message}}</div>@enderror
 
                         </div>
                         <div class="ui search focus mt-15">
                             <div class="ui left icon input swdh11 swdh19">
                                 <input class="prompt srch_explore" type="password" name="password" value="{{old('password')}}" id="id_password" required="" maxlength="64" placeholder="Password">
                             </div>
+                            @error('password')<div class="text-danger">{{$message}}</div>@enderror
                         </div>
                         <div class="ui form mt-30 checkbox_sign">
                             <div class="inline field">
