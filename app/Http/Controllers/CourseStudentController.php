@@ -2,40 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\CourseStudent;
 use Illuminate\Http\Request;
 
 class CourseStudentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function index(Course $course)
     {
-        //
+        $students = $course->students()->paginate(20);
+
+        $user_role = $this->getUserRole();
+        if ($user_role = 0)
+            return view('admin.course.students', compact(['course','students']));
+        if ($user_role = 1)
+            return view('tutors.course.students', compact(['course','students']));
+        if ($user_role = 2)
+            return view('students.course.students', compact(['course','students']));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

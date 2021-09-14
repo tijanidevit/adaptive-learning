@@ -16,4 +16,7 @@ class CourseSection extends Model
     public function quiz(){
         return $this->hasMany(SectionQuiz::class);
     }
+    public function contents(){
+        return $this->hasMany(SectionContent::class);
+    }
 }

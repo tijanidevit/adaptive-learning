@@ -42,7 +42,17 @@ class CourseSectionController extends Controller
 
     public function show(CourseSection $courseSection)
     {
-        $section_contents =
+        $contents = $courseSection->contents;
+        $course = $courseSection->course;
+        $section = $courseSection;
+
+        $user_role = $this->getUserRole();
+        if ($user_role = 0)
+            return view('admin.course.sections/show', compact(['course','section','contents']));
+        if ($user_role = 1)
+            return view('tutors.course.sections/show', compact(['course','section','contents']));
+        if ($user_role = 2)
+            return view('students.course.sections/show', compact(['course','section','contents']));
     }
 
     public function edit(CourseSection $courseSection)
@@ -57,6 +67,6 @@ class CourseSectionController extends Controller
 
     public function destroy(CourseSection $courseSection)
     {
-        //
+
     }
 }
