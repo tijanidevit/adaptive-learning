@@ -7,77 +7,50 @@ use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $data = request()->validate([
+            'category_id' => 'required|string',
+            'title' => 'required|string',
+            'price' => 'required|integer',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'description' => 'required|min:8',
+        ]);
+//        dd($data['status']);
+        $data['thumbnail'] = $this->file_upload('image','public/course_images');
+
+        $a = auth()->user()->tutor->courses()->create($data);
+
+        return redirect('tutor/courses/'.$a->id)->with('success',"Course Created Successfully");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
-     */
     public function show(Course $course)
     {
-        //
+        $user_role = getUserRole();
+        if ($user_role = 1)
+            return view('students');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Course $course)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Course $course)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Course $course)
     {
         //

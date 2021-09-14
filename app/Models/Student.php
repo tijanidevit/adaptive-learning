@@ -13,7 +13,7 @@ class Student extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
-    public function student_courses(){
+    public function courses(){
         return $this->hasMany(CourseStudent::class);
     }
     public function peers(){

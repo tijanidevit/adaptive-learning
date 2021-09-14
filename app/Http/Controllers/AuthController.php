@@ -75,7 +75,9 @@ class AuthController extends Controller
     {
         $data['password'] = Hash::make($data['password']);
 //        dd($data);
-        return User::create($data);
+        $user = User::create($data);
+        $user->student()->create($user->id);
+        return $user;
     }
 
     public function verifyData(){
