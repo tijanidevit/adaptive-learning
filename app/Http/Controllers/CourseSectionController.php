@@ -22,19 +22,27 @@ class CourseSectionController extends Controller
             return view('students.course.sections', compact(['course','sections']));
     }
 
-    public function create()
+    public function create(Course $course)
     {
-        //
+        return view('tutors.course.create', compact('course'));
     }
 
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'section' => 'required,string,min:3',
+            'course_id' => 'required'
+        ]);
+        $section = CourseSection::create($data);
+        $course_id = $data['course_id'];
+        $section_id = $section->id;
+
+        return redirect()->route('tutor.course_section', [$course_id,$section_id])->with('success',$data['section'].'created successfully');
     }
 
     public function show(CourseSection $courseSection)
     {
-        //
+        $section_contents =
     }
 
     public function edit(CourseSection $courseSection)
