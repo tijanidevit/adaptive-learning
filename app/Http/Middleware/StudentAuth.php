@@ -17,11 +17,11 @@ class StudentAuth
     public function handle(Request $request, Closure $next)
     {
         if (!auth()->user()){
-            return redirect('student/login');
+            return redirect('students/login');
         }
         else{
             if (auth()->user()->role != 2) {
-                return redirect('student/login')->with('error','Unathorized Access!');
+                return redirect('students/login')->with('error','Unathorized Access!');
             }
         }
 

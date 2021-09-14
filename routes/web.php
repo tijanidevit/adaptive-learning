@@ -7,12 +7,14 @@ Route::get('/', function () {
 });
 
 
-Route::get('/student', function () {
-    return view('students.home');
+Route::get('/students', function () {
+    return redirect()->to('students/login');
 })->name('student_home');
+
 Route::get('/students/login', function () {
     return view('students.auth.login');
-});
+})->middleware();
+
 Route::get('/students/register', function () {
     return view('students.auth.register');
 });

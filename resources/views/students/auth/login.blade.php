@@ -17,6 +17,9 @@
             <div class="col-lg-6 col-md-8">
                 <div class="sign_form">
                     <h2>Welcome Back</h2>
+                    @if(session('error'))
+                        <div class="alert alert-warning">{{session('error')}}</div>
+                    @endif
                     <p>Log In to Your Edututs+ Account!</p>
 
                     <form  method="post" action="{{route('login')}}">
