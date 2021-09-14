@@ -7,79 +7,58 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $categories = Category::all()->sortBy('category');
+        $user_role = $this->getUserRole();
+
+        if ($user_role = 0)
+            return view('admin.categories.index', compact(['categories']));
+        if ($user_role = 1)
+            return view('tutors.categories.index', compact(['categories']));
+        if ($user_role = 2)
+            return view('students.categories.index', compact(['categories']));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'category' => 'required,string,min:3'
+        ]);
+        Category::create($data);
+        return redirect()->route('admin.categories')->with('success',$data['category'].'created successfully');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function show(Category $category)
     {
-        //
+        $courses = $category->courses()->paginate(20);
+        if ($user_role = 0)
+            return view('admin.categories.show', compact(['category','courses']));
+        if ($user_role = 1)
+            return view('tutors.categories.show', compact(['category','courses']));
+        if ($user_role = 2)
+            return view('students.categories.show', compact(['category','courses']));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Category $category)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Category $category)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->route('admin.categories')->with('success','category deleted successfully');
     }
 }

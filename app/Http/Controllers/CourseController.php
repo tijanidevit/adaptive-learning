@@ -36,9 +36,19 @@ class CourseController extends Controller
 
     public function show(Course $course)
     {
-        $user_role = getUserRole();
+        $user_role = $this->getUserRole();
+        $course_students = $course->students;
+        $course_sections = $course->sections()->load('section_contents');
+
+        //section_contents = $course_sections->section_contents;
+
+
+        if ($user_role = 0)
+            return view('admin.courses.details', compact(['course_sections','course','course_students']));
         if ($user_role = 1)
-            return view('students');
+            return view('tutors.courses.details', compact(['course_sections','course','course_students']));
+        if ($user_role = 2)
+            return view('students.courses.details', compact(['course_sections','course','course_students']));
     }
 
     public function edit(Course $course)
