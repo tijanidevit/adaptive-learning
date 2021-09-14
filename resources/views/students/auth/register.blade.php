@@ -19,7 +19,7 @@
                     <h2>Welcome to Cursus</h2>
                     <p>Sign Up and Start Learning!</p>
 
-                    <form method="post" action="{{route('student_login')}}">
+                    <form method="post" action="{{route('student_register')}}">
                         @csrf
                         <div class="ui search focus">
                             <div class="ui left icon input swdh11 swdh19">
@@ -38,6 +38,7 @@
                             <div class="ui left icon input swdh11 swdh19">
                                 <input class="prompt srch_explore" type="email" name="email" value="{{old('email')}}" id="id_email" required="" maxlength="64" placeholder="Email Address">
                             </div>
+                            @error('email'){{$message}}@enderror
 
                         </div>
                         <div class="ui search focus mt-15">

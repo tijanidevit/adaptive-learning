@@ -19,8 +19,8 @@ Route::get('/student/register', function () {
 
 
 
-Route::post('/student/register', [App\Http\Controllers\AuthController::class, 'registerStudent'])->name('student_login');
-Route::post('/student/login', [App\Http\Controllers\AuthController::class, 'login'])->name('student_login');
+Route::post('/student/register', [App\Http\Controllers\AuthController::class, 'registerStudent'])->name('student_register');
+Route::post('login', [App\Http\Controllers\AuthController::class, 'login'])->name('login');
 
 Route::group(['prefix' => 'student', 'middleware' => 'student_auth'], function() {
     Route::get('/dashoard', [App\Http\Controllers\DashboardController::class, 'studentDashboard'])->name('student.dashboard');

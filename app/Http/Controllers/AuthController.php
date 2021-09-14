@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    public function authenticate(Request $request)
+    public function login(Request $request)
     {
         $credentials = $request->validate([
             'email' => ['required', 'email'],
@@ -18,7 +18,6 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials, $remember = true)) {
             $request->session()->regenerate();
-
             if (auth()->user()->role == 0){
                 return redirect()->intended('admin/dashboard');
             }
@@ -53,20 +52,20 @@ class AuthController extends Controller
         $data['role'] = 2;
 
         $user = $this->create($data);
-        $this->postRegister($user);
+        return $this->postRegister($user);
     }
 
     public function postRegister($user)
     {
         Auth::login($user, $remember = true);
         if ($user->role == 1){
-            return redirect()->to('tutors/dashboard');
+            return redirect()->intended('tutors/dashboard');
         }
         if ($user->role == 2){
-            return redirect()->to('students/dashboard');
+            return redirect()->intended('students/dashboard');
         }
         if ($user->role == 0){
-            return redirect()->to('admin/dashboard');
+            return redirect()->intended('admin/dashboard');
         }
 
     }

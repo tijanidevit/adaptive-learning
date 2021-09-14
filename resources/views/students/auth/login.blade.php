@@ -19,7 +19,9 @@
                     <h2>Welcome Back</h2>
                     <p>Log In to Your Edututs+ Account!</p>
 
-                    <form>
+                    <form  method="post" action="{{route('login')}}">
+                        @csrf
+
                         <div class="ui search focus mt-15">
                             <div class="ui left icon input swdh95">
                                 <input class="prompt srch_explore" type="email" name="email" value="{{old('email')}}" id="id_email" required="" maxlength="64" placeholder="Email Address">
