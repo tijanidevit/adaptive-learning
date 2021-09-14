@@ -23,6 +23,6 @@ Route::post('/students/register', [App\Http\Controllers\AuthController::class, '
 Route::post('/students/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login');
 
 Route::group(['prefix' => 'student', 'middleware' => 'student_auth'], function() {
-    Route::get('/dashoard', [App\Http\Controllers\DashboardController::class, 'studentDashboard'])->name('student.dashboard');
+    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'studentDashboard'])->name('student.dashboard');
 
 });
