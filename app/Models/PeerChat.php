@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class PeerChat extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+
+    public function student(){
+        return $this->belongsTo(Student::class);
+    }
+    public function course(){
+        return $this->belongsTo(Course::class);
+    }
 }

@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CourseSection extends Model
+class CourseStudent extends Model
 {
     use HasFactory;
     protected $guarded = [];
 
+    public function students(){
+        return $this->belongsToMany(Student::class);
+    }
     public function course(){
         return $this->belongsTo(Course::class);
-    }
-    public function quiz(){
-        return $this->hasMany(SectionQuiz::class);
     }
 }
