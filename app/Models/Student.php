@@ -16,10 +16,16 @@ class Student extends Model
     public function courses(){
         return $this->hasMany(CourseStudent::class);
     }
+    public function payments(){
+        return $this->hasMany(Payment::class);
+    }
     public function peers(){
         return $this->hasMany(PeerStudent::class);
     }
     public function created_peers(){
         return $this->hasMany(Peer::class);
+    }
+    public function peer_chats(){
+        return $this->hasMany(PeerChat::class);
     }
 }

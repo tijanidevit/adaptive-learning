@@ -28,49 +28,34 @@ class CourseStudentController extends Controller
 
     public function store(Request $request)
     {
+        $student = auth()->user()->student();
+        $data = $request->validate([
+            'course_id' => 'required'
+        ]);
 
+        $check_already_enrolled = CourseStudent::all()->where('student_id', $student->id )->where('course_id', $data['course_id']);
+        if (empty($check_already_enrolled)) {
+            $student->courses()->create($data);
+        }
+        $course_id = $data['course_id'];
+        return redirect()->route('student.course', [$course_id])->with('success','Course enrolled successfully');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\CourseStudent  $courseStudent
-     * @return \Illuminate\Http\Response
-     */
     public function show(CourseStudent $courseStudent)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\CourseStudent  $courseStudent
-     * @return \Illuminate\Http\Response
-     */
     public function edit(CourseStudent $courseStudent)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CourseStudent  $courseStudent
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, CourseStudent $courseStudent)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\CourseStudent  $courseStudent
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(CourseStudent $courseStudent)
     {
         //

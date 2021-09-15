@@ -7,66 +7,39 @@ use Illuminate\Http\Request;
 
 class PeerChatController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $student = auth()->user()->student();
+        $data = $request->validate([
+            'peer_id' => 'required|integer',
+            'message' => 'required',
+        ]);
+
+        $student->peer_chats()->create($data);
+        $peer_id = $data['peer_id'];
+        return redirect()->route('student.course', [$peer_id])->with('success','Course enrolled successfully');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\PeerChat  $peerChat
-     * @return \Illuminate\Http\Response
-     */
     public function show(PeerChat $peerChat)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\PeerChat  $peerChat
-     * @return \Illuminate\Http\Response
-     */
     public function edit(PeerChat $peerChat)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PeerChat  $peerChat
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, PeerChat $peerChat)
     {
         //
