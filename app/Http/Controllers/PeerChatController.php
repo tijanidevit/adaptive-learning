@@ -27,7 +27,7 @@ class PeerChatController extends Controller
 
         $student->peer_chats()->create($data);
         $peer_id = $data['peer_id'];
-        return redirect()->route('student.course', [$peer_id])->with('success','Course enrolled successfully');
+        return redirect()->route('student.course.peer', [$peer_id])->with('success','Message sent successfully');
     }
 
     public function show(PeerChat $peerChat)

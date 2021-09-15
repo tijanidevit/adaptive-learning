@@ -16,4 +16,7 @@ class Peer extends Model
     public function course(){
         return $this->belongsTo(Course::class);
     }
+    public  function chats(){
+        return $this->hasMany(PeerChat::class);
+    }
 }

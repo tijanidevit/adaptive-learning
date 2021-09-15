@@ -7,46 +7,34 @@ use Illuminate\Http\Request;
 
 class PeerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $peers = Peer::all()->sortBy('peer_name');
+        return view('admin.peers', compact('peers'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('students.peers.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $student = auth()->user()->student();
+        $data = $request->validate([
+            'course_id' => 'required|integer',
+            'peer_name' => 'required',
+        ]);
+
+        $peer = $student->peers()->create($data);
+        $peer_id = $data['peer_id'];
+        return redirect()->route('student.course.peer', [$peer_id])->with('success','Course Peer Created successfully');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Peer  $peer
-     * @return \Illuminate\Http\Response
-     */
     public function show(Peer $peer)
     {
-        //
+        $chats = $peer->chats;
+        return view('students.courses.peer.chat', compact(['peer','chats']));
     }
 
     /**
