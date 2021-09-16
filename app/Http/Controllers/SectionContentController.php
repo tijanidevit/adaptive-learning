@@ -2,48 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
+use App\Models\CourseSection;
 use App\Models\SectionContent;
 use Illuminate\Http\Request;
 
 class SectionContentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    public function create(Course $course, CourseSection $courseSection)
     {
-        //
+        return view('tutors.courses.section.content.new', compact(['course_section','course']));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'section_quiz_id' => 'required|integer',
+            'option' => 'required',
+            'is_answer' => 'required|integer',
+        ]);
+
+        QuizOption::create($data);
+        $section_quiz_id = $data['section_quiz_id'];
+        return redirect()->route('tutor.course.quiz', [$section_quiz_id])->with('success','Option added successfully');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\SectionContent  $sectionContent
-     * @return \Illuminate\Http\Response
-     */
     public function show(SectionContent $sectionContent)
     {
         //

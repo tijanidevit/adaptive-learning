@@ -7,35 +7,28 @@ use Illuminate\Http\Request;
 
 class QuizOptionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $tutor = auth()->user()->tutor();
+        $data = $request->validate([
+            'section_quiz_id' => 'required|integer',
+            'option' => 'required',
+            'is_answer' => 'required|integer',
+        ]);
+
+        QuizOption::create($data);
+        $section_quiz_id = $data['section_quiz_id'];
+        return redirect()->route('tutor.course.quiz', [$section_quiz_id])->with('success','Option added successfully');
     }
 
     /**

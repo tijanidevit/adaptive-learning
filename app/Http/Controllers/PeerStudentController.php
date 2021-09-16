@@ -21,11 +21,10 @@ class PeerStudentController extends Controller
     {
         $student = auth()->user()->student();
         $data = $request->validate([
-            'peer_id' => 'required|integer',
-            'message' => 'required',
+            'peer_id' => 'required|integer'
         ]);
 
-        $student->peer_chats()->create($data);
+        $student->peer()->create($data);
         $peer_id = $data['peer_id'];
         return redirect()->route('student.course.peer', [$peer_id])->with('success','Message sent successfully');
     }
