@@ -12,10 +12,16 @@ class DashboardController extends Controller
     {
         $user = auth()->user();
         $student = $user->student;
-        dd($student);
         $enrolled_courses = $student->courses;
-        dd($enrolled_courses);
         $peers = $student->peers()->take(10);
         $new_courses = Course::all()->take(8);
+    }
+
+    public function tutor()
+    {
+        $user = auth()->user();
+        $tutor = $user->tutor;
+        dd($tutor);
+        $courses = $tutor->courses;
     }
 }
