@@ -34,10 +34,11 @@ Route::group(['prefix' => 'students', 'middleware' => 'student_auth'], function(
 
 
 
-Route::get('/students/login', function () {
-    return view('students.auth.login');
-})->middleware('pre_auth');
 
-Route::get('/students/register', function () {
-    return view('students.auth.register');
-})->middleware('pre_auth');
+
+//Tutors
+Route::get('/tutors/login', function () { return view('tutors.auth.login'); })->middleware('pre_auth');
+
+Route::get('/tutors/register', function () { return view('tutors.auth.register'); })->middleware('pre_auth');
+Route::post('/students/register', [App\Http\Controllers\AuthController::class, 'registerTutor'])->name('tutor_register');
+

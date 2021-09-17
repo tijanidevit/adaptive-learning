@@ -55,6 +55,16 @@ class AuthController extends Controller
         return $this->postRegister($user);
     }
 
+    public function registerTutor(Request $request)
+    {
+        $data = $this->verifyData();
+
+        $data['role'] = 1;
+
+        $user = $this->create($data);
+        return $this->postRegister($user);
+    }
+
     public function postRegister($user)
     {
         Auth::login($user, $remember = true);

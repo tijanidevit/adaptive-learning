@@ -26,6 +26,8 @@
                                     <div class="form-group">
                                         <label><strong>Email</strong></label>
                                         <input type="email" name="email"  class="form-control" placeholder="hello@example.com" value="{{old('email')}}">
+
+                                        @error('email') <div class="text-danger">{{$message}}</div> @enderror
                                     </div>
                                     <div class="form-group">
                                         <label><strong>Password</strong></label>

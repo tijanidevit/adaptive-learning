@@ -26,20 +26,24 @@
                                     <div class="form-group">
                                         <label><strong>First Name</strong></label>
                                         <input type="text" class="form-control" placeholder="Adekunle" name="first_name" value="{{old('first_name')}}">
+                                        @error('first_name') <div class="text-danger">{{$message}}</div> @enderror
                                     </div>
 
                                     <div class="form-group">
                                         <label><strong>Other names</strong></label>
                                         <input type="text" class="form-control" placeholder="Olawale Adekunle" name="other_names" value="{{old('other_names')}}">
+                                        @error('other_names') <div class="text-danger">{{$message}}</div> @enderror
                                     </div>
 
                                     <div class="form-group">
                                         <label><strong>Email</strong></label>
                                         <input type="email" name="email"  class="form-control" placeholder="hello@example.com" value="{{old('email')}}">
+                                        @error('email') <div class="text-danger">{{$message}}</div> @enderror
                                     </div>
                                     <div class="form-group">
                                         <label><strong>Password</strong></label>
                                         <input type="password" name="password" minlength="6" class="form-control" placeholder="*******">
+                                        @error('password') <div class="text-danger">{{$message}}</div> @enderror
                                     </div>
                                     <div class="text-center mt-4">
                                         <button type="submit" class="btn btn-primary btn-block">Sign me up</button>
