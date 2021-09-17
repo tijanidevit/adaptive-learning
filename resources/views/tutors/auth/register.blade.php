@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 
-
-<!-- Mirrored from demo.themefisher.com/focus/page-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 28 Aug 2021 03:36:35 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Focus - Bootstrap Admin Dashboard </title>
+    <title>Tutor Registration Page </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon.png')}}">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
@@ -24,25 +22,31 @@
                         <div class="col-xl-12">
                             <div class="auth-form">
                                 <h4 class="text-center mb-4">Sign up your account</h4>
-                                <form action="{{route('lecturers_login')}}">
+                                <form action="{{route('lecturer_reg')}}">
                                     <div class="form-group">
-                                        <label><strong>Username</strong></label>
-                                        <input type="text" class="form-control" placeholder="username">
+                                        <label><strong>First Name</strong></label>
+                                        <input type="text" class="form-control" placeholder="Adekunle" name="first_name" value="{{old('first_name')}}">
                                     </div>
+
+                                    <div class="form-group">
+                                        <label><strong>Other names</strong></label>
+                                        <input type="text" class="form-control" placeholder="Olawale Adekunle" name="other_names" value="{{old('other_names')}}">
+                                    </div>
+
                                     <div class="form-group">
                                         <label><strong>Email</strong></label>
-                                        <input type="email" class="form-control" placeholder="hello@example.com">
+                                        <input type="email" name="email"  class="form-control" placeholder="hello@example.com" value="{{old('email')}}">
                                     </div>
                                     <div class="form-group">
                                         <label><strong>Password</strong></label>
-                                        <input type="password" class="form-control" value="Password">
+                                        <input type="password" name="password" minlength="6" class="form-control" placeholder="*******">
                                     </div>
                                     <div class="text-center mt-4">
                                         <button type="submit" class="btn btn-primary btn-block">Sign me up</button>
                                     </div>
                                 </form>
                                 <div class="new-account mt-3">
-                                    <p>Already have an account? <a class="text-primary" href="page-login.html">Sign in</a></p>
+                                    <p>Already have an account? <a class="text-primary" href="./login">Sign in</a></p>
                                 </div>
                             </div>
                         </div>

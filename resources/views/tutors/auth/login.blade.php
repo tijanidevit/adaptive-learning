@@ -25,22 +25,22 @@
                                     @csrf
                                     <div class="form-group">
                                         <label><strong>Email</strong></label>
-                                        <input type="email" class="form-control" value="hello@example.com">
+                                        <input type="email" name="email"  class="form-control" placeholder="hello@example.com" value="{{old('email')}}">
                                     </div>
                                     <div class="form-group">
                                         <label><strong>Password</strong></label>
-                                        <input type="password" class="form-control" value="Password">
+                                        <input type="password" name="password" minlength="6" class="form-control" placeholder="*******">
                                     </div>
                                     <div class="form-row d-flex justify-content-between mt-4 mb-2">
                                         <div class="form-group">
                                             <div class="form-check ml-2">
-                                                <input class="form-check-input" type="checkbox" id="basic_checkbox_1">
+                                                <input name="remember" checked class="form-check-input" type="checkbox" id="basic_checkbox_1">
                                                 <label class="form-check-label" for="basic_checkbox_1">Remember me</label>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <a href="page-forgot-password.html">Forgot Password?</a>
-                                        </div>
+{{--                                        <div class="form-group">--}}
+{{--                                            <a href="page-forgot-password.html">Forgot Password?</a>--}}
+{{--                                        </div>--}}
                                     </div>
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary btn-block">Sign me in</button>
