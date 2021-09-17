@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Tutor Login Page </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon.png')}}">
-    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('tutors/images/favicon.png')}}">
+    <link href="{{asset('tutors/css/style.css')}}" rel="stylesheet">
 </head>
 
 <body class="h-100">
@@ -65,9 +65,9 @@
     Scripts
 ***********************************-->
 <!-- Required vendors -->
-<script src="{{asset('tutorsvendor/global/global.min.js')}}"></script>
-<script src="{{asset('tutorsjs/quixnav-init.js')}}"></script>
-<script src="{{asset('tutorsjs/custom.min.js')}}"></script>
+<script src="{{asset('tutors/tutorsvendor/global/global.min.js')}}"></script>
+<script src="{{asset('tutors/tutorsjs/quixnav-init.js')}}"></script>
+<script src="{{asset('tutors/tutorsjs/custom.min.js')}}"></script>
 
 </body>
 </html>

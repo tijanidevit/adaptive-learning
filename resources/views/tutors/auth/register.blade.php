@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Tutor Registration Page </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon.png')}}">
-    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('tutors/images/favicon.png')}}">
+    <link href="{{asset('tutors/css/style.css')}}" rel="stylesheet">
 
 </head>
 
@@ -22,7 +22,8 @@
                         <div class="col-xl-12">
                             <div class="auth-form">
                                 <h4 class="text-center mb-4">Sign up your account</h4>
-                                <form action="{{route('tutor_register')}}">
+                                <form method="post" action="{{route('tutor_register')}}">
+                                    @csrf
                                     <div class="form-group">
                                         <label><strong>First Name</strong></label>
                                         <input type="text" class="form-control" placeholder="Adekunle" name="first_name" value="{{old('first_name')}}">
@@ -65,8 +66,8 @@
     Scripts
 ***********************************-->
 <!-- Required vendors -->
-<script src="{{asset('vendor/global/global.min.js')}}"></script>
-<script src="{{asset('js/quixnav-init.js')}}"></script>
+<script src="{{asset('tutors/vendor/global/global.min.js')}}"></script>
+<script src="{{asset('tutors/js/quixnav-init.js')}}"></script>
 <!--endRemoveIf(production)-->
 </body>
 

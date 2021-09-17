@@ -18,6 +18,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials, $remember = true)) {
             $request->session()->regenerate();
+//            dd(auth()->user());
             if (auth()->user()->role == 0){
                 return redirect()->intended('admin/dashboard');
             }
@@ -86,7 +87,22 @@ class AuthController extends Controller
         $data['password'] = Hash::make($data['password']);
 //        dd($data);
         $user = User::create($data);
-        $user->student()->create($user->id);
+        if ($user->role == 1){
+            $tutor_data = [
+                'user_id' => $user->id,
+                'cv_link' => '',
+                'balance' => 0,
+                'approval_status' => 0
+            ];
+            $user->tutor()->create($tutor_data);
+        }
+        if ($user->role == 2){
+            $student_data = [
+                'user_id' => $user->id
+            ];
+            $user->student()->create($student_data);
+        }
+
         return $user;
     }
 

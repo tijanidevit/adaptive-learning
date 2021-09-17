@@ -40,5 +40,5 @@ Route::group(['prefix' => 'students', 'middleware' => 'student_auth'], function(
 Route::get('/tutors/login', function () { return view('tutors.auth.login'); })->middleware('pre_auth');
 
 Route::get('/tutors/register', function () { return view('tutors.auth.register'); })->middleware('pre_auth');
-Route::post('/students/register', [App\Http\Controllers\AuthController::class, 'registerTutor'])->name('tutor_register');
+Route::post('/tutors/register', [App\Http\Controllers\AuthController::class, 'registerTutor'])->name('tutor_register');
 
