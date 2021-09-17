@@ -22,7 +22,7 @@
                         <div class="col-xl-12">
                             <div class="auth-form">
                                 <h4 class="text-center mb-4">Sign up your account</h4>
-                                <form action="{{route('lecturer_reg')}}">
+                                <form action="{{route('tutor_register')}}">
                                     <div class="form-group">
                                         <label><strong>First Name</strong></label>
                                         <input type="text" class="form-control" placeholder="Adekunle" name="first_name" value="{{old('first_name')}}">
