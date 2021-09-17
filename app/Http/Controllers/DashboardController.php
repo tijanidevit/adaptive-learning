@@ -23,5 +23,7 @@ class DashboardController extends Controller
         $tutor = $user->tutor;
         dd($tutor);
         $courses = $tutor->courses;
+
+        return view('tutors.dashboard');
     }
 }
