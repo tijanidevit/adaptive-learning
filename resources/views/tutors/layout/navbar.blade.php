@@ -3,29 +3,19 @@
         <ul class="metismenu" id="menu">
             <li class="nav-label first">Main Menu</li>
             <li>
-                <a href="{{route('tutor.dashboard')}}"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
-            </li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                        class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
-                <ul aria-expanded="false">
-                    <li><a href="index-2.html">Dashboard 1</a></li>
-                    <li><a href="index2.html">Dashboard 2</a></li>
-                </ul>
+                <a href="{{route('tutor.dashboard')}}"><i class="icon icon-app-store"></i><span class="nav-text">Dashboard</span></a>
             </li>
 
-            <li class="nav-label">Apps</li>
+            <li>
+                <a href="{{route('tutor.dashboard')}}"><i class="ti-user"></i><span class="nav-text">Profile</span></a>
+            </li>
+
+{{--            <li class="nav-label">Courses</li>--}}
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                        class="icon icon-app-store"></i><span class="nav-text">Apps</span></a>
+                        class="ti-layout-grid2"></i><span class="nav-text">Courses</span></a>
                 <ul aria-expanded="false">
-                    <li><a href="app-profile.html">Profile</a></li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
-                        <ul aria-expanded="false">
-                            <li><a href="email-compose.html">Compose</a></li>
-                            <li><a href="email-inbox.html">Inbox</a></li>
-                            <li><a href="email-read.html">Read</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="app-calender.html">Calendar</a></li>
+                    <li><a href="app-profile.html">View Your Courses</a></li>
+                    <li><a href="app-profile.html">Add New Course</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
