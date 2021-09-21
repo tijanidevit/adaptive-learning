@@ -9,6 +9,5 @@ class ProfileController extends Controller
     public function tutor(){
         $user = auth()->user();
         $user->load('tutor');
-
     }
 }
