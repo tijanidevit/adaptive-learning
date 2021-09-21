@@ -21,7 +21,7 @@ Route::get('/students/register', function () {
 
 
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login');
-Route::get('/logout', [App\Http\Controllers\AuthController::class, 'logout']);
+Route::get('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
 
 
