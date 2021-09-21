@@ -35,7 +35,6 @@ Route::group(['prefix' => 'students', 'middleware' => 'student_auth'], function(
 
 
 
-
 //Tutors
 Route::get('/tutors/login', function () { return view('tutors.auth.login'); })->middleware('pre_auth');
 

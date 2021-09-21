@@ -21,10 +21,10 @@ class DashboardController extends Controller
     {
         $user = auth()->user();
         $tutor = $user->tutor;
-        $courses = $tutor->courses;
+        $total_courses = $tutor->total_courses;
+        $total_students = $tutor->total_students;
+        $total_cashout = $tutor->total_cashout;
 
-
-
-        return view('tutors.dashboard', compact('courses'));
+        return view('tutors.dashboard', compact('total_courses', 'user', 'tutor','total_cashout','total_students'));
     }
 }
