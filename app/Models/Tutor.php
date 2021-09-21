@@ -22,15 +22,16 @@ class Tutor extends Model
     public function cashout(){
         return $this->hasMany(TutorCashout::class);
     }
+    public function students(){
+        return $this->hasManyThrough(CourseStudent::class,Course::class);
+    }
 
 
-    public function total_courses(){
-        return $this->courses()->count();
-    }
-    public function total_cashout(){
-        return $this->cashout()->count();
-    }
-    public function total_students(){
-        return $this->hasManyThrough(CourseStudent::class,Course::class)->count();
-    }
+//    public function total_courses(){
+//        return $this->courses()->count();
+//    }
+//    public function total_cashout(){
+//        return $this->cashout()->count();
+//    }
+
 }

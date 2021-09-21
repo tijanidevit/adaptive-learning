@@ -26,7 +26,7 @@
                                 <i class="ti-money text-success border-success"></i>
                             </div>
                             <div class="stat-content d-inline-block">
-                                <div class="stat-text">Profit</div>
+                                <div class="stat-text">Balance (&#8358;)</div>
                                 <div class="stat-digit">{{$tutor->balance}}</div>
                             </div>
                         </div>
