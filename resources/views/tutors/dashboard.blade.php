@@ -96,7 +96,7 @@
                                 @empty
                                     <div class="col-lg-12">
                                         <div class="card-body">
-                                            <p>You have not added any course yet. Add a new course <a href="{{route('tutor.add.course')}}">Here</a></p>
+                                            <p>You have not added any course yet. Add a new course <a href="{{route('tutor.course.create')}}">Here</a></p>
                                         </div>
                                     </div>
                             @endforelse

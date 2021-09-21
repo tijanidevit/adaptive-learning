@@ -45,5 +45,6 @@ Route::group(['prefix' => 'tutors', 'middleware' => 'tutor_auth'], function() {
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'tutor'])->name('tutor.dashboard');
     Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'tutor'])->name('tutor.profile');
 
-    Route::get('/courses/new', [App\Http\Controllers\CourseController::class, 'create'])->name('tutor.add.course');
+    Route::get('/courses/new', [App\Http\Controllers\CourseController::class, 'create'])->name('tutor.course.create');
+    Route::get('/courses', [App\Http\Controllers\CourseController::class, 'index'])->name('tutor.course.index');
 });

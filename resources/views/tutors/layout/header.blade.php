@@ -2,7 +2,7 @@
         Nav header start
     ***********************************-->
 <div class="nav-header">
-    <a href="index-2.html" class="brand-logo">
+    <a href="{{route('tutor.dashboard')}}" class="brand-logo">
         <img class="logo-abbr" src="{{asset('tutors//images/logo.png')}}" alt="">
         <img class="logo-compact" src="{{asset('tutors//images/logo-text.png')}}" alt="">
         <img class="brand-title" src="{{asset('tutors//images/logo-text.png')}}" alt="">
@@ -104,14 +104,14 @@
                             <i class="mdi mdi-account"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="app-profile.html" class="dropdown-item">
+                            <a href="{{route('tutor.profile')}}" class="dropdown-item">
                                 <i class="icon-user"></i>
                                 <span class="ml-2">Profile </span>
                             </a>
-                            <a href="email-inbox.html" class="dropdown-item">
-                                <i class="icon-envelope-open"></i>
-                                <span class="ml-2">Inbox </span>
-                            </a>
+{{--                            <a href="email-inbox.html" class="dropdown-item">--}}
+{{--                                <i class="icon-envelope-open"></i>--}}
+{{--                                <span class="ml-2">Inbox </span>--}}
+{{--                            </a>--}}
                             <a href="{{route('logout')}}" class="dropdown-item">
                                 <i class="icon-key"></i>
                                 <span class="ml-2">Logout </span>

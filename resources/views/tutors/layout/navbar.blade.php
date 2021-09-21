@@ -7,15 +7,15 @@
             </li>
 
             <li>
-                <a href="{{route('tutor.dashboard')}}"><i class="ti-user"></i><span class="nav-text">Profile</span></a>
+                <a href="{{route('tutor.profile')}}"><i class="ti-user"></i><span class="nav-text">Profile</span></a>
             </li>
 
 {{--            <li class="nav-label">Courses</li>--}}
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="ti-layout-grid2"></i><span class="nav-text">Courses</span></a>
                 <ul aria-expanded="false">
-                    <li><a href="{{route('tutor.profile')}}">View Your Courses</a></li>
-                    <li><a href="{{route('tutor.add.course')}}">Add New Course</a></li>
+                    <li><a href="{{route('tutor.course.index')}}">View Your Courses</a></li>
+                    <li><a href="{{route('tutor.course.create')}}">Add New Course</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
