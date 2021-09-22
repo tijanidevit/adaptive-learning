@@ -13,8 +13,8 @@
                 </div>
                 <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Form</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Element</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('tutor.dashboard')}}">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Add new course</a></li>
                     </ol>
                 </div>
             </div>
@@ -22,18 +22,70 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Form Row</h4>
+                    <h4 class="card-title">Course Details</h4>
                 </div>
                 <div class="card-body">
                     <div class="basic-form">
-                        <form>
+                        <form method="post" action="{{route('tutor_course_store')}}">
+                            @csrf
                             <div class="form-row">
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" placeholder="First name">
+                                <div class="col-sm-6 mb-2">
+                                    <label for="title">Title</label>
+                                    <input type="text" required class="form-control" name="title" id="title" value="{{old('title')}}">
+                                    @error('title') <div class="text-danger">{{$message}}</div> @enderror
                                 </div>
-                                <div class="col-sm-6 mt-2 mt-sm-0">
-                                    <input type="text" class="form-control" placeholder="Last name">
+
+                                <div class="col-sm-6 mb-2 mt-sm-0">
+                                    <label for="category">Category</label>
+                                    <select required class="form-control" name="category_id" id="category">
+                                        <option disabled selected>Select a category</option>
+
+                                        @forelse($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->category}}</option>
+                                        @empty
+                                        @endforelse
+                                    </select>
+                                    @error('category_id') <div class="text-danger">{{$message}}</div> @enderror
                                 </div>
+
+                                <div class="col-sm-6 mb-2">
+                                    <label for="title">Price</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">&#8358;</span>
+                                        </div>
+                                        <input type="text" required class="form-control" name="price" id="price" value="{{old('price')}}">
+                                        @error('price') <div class="text-danger">{{$message}}</div> @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 mb-2">
+                                    <label for="title">Image</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">&#8358;</span>
+                                        </div>
+                                        <input type="file" accept="image/*" required class="form-control" name="image" id="image" value="{{old('image')}}">
+                                        @error('image') <div class="text-danger">{{$message}}</div> @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 mb-2">
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Make Course Visible
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 mb-2">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+
+
                             </div>
                         </form>
                     </div>

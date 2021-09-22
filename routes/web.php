@@ -47,4 +47,6 @@ Route::group(['prefix' => 'tutors', 'middleware' => 'tutor_auth'], function() {
 
     Route::get('/courses/new', [App\Http\Controllers\CourseController::class, 'create'])->name('tutor.course.create');
     Route::get('/courses', [App\Http\Controllers\CourseController::class, 'index'])->name('tutor.course.index');
+    Route::post('/courses', [App\Http\Controllers\CourseController::class, 'store'])->name('tutor_course_store');
+
 });
