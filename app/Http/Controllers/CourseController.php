@@ -25,11 +25,13 @@ class CourseController extends Controller
             'category_id' => 'required|string',
             'title' => 'required|string',
             'price' => 'required|integer',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'image' => 'required',
             'description' => 'required|min:8',
         ]);
-//        dd($data['status']);
-        $data['thumbnail'] = $this->file_upload('image','public/course_images');
+        if (!$request->status)
+            $data['status'] = 0;
+
+        $data['image'] = $this->file_upload('image','public/course_images');
 
         $a = auth()->user()->tutor->courses()->create($data);
 

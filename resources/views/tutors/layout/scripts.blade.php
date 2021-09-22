@@ -13,3 +13,10 @@
 <script src="{{asset('tutors/vendor/summernote/js/summernote.min.js')}}"></script>
 <!-- Summernote init -->
 <script src="{{asset('tutors/js/plugins-init/summernote-init.js')}}"></script>
+
+
+<script>
+    $('textarea').summernote({
+             height: 150,
+        });
+</script>

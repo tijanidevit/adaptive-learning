@@ -28,10 +28,15 @@
                     <div class="basic-form">
                         <form method="post" action="{{route('tutor_course_store')}}">
                             @csrf
+
+                            @if(session('error'))
+                                <div class="alert alert-danger">{{session('error')}}</div>
+                            @endif
+
                             <div class="form-row">
                                 <div class="col-sm-6 mb-2">
                                     <label for="title">Title</label>
-                                    <input type="text" required class="form-control" name="title" id="title" value="{{old('title')}}">
+                                    <input autofocus type="text" required class="form-control" name="title" id="title" value="{{old('title')}}">
                                     @error('title') <div class="text-danger">{{$message}}</div> @enderror
                                 </div>
 
@@ -55,25 +60,25 @@
                                             <span class="input-group-text">&#8358;</span>
                                         </div>
                                         <input type="text" required class="form-control" name="price" id="price" value="{{old('price')}}">
-                                        @error('price') <div class="text-danger">{{$message}}</div> @enderror
                                     </div>
+                                    @error('price') <div class="text-danger">{{$message}}</div> @enderror
                                 </div>
 
                                 <div class="col-sm-6 mb-2">
                                     <label for="title">Image</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text">&#8358;</span>
+                                            <span class="input-group-text">Upload</span>
                                         </div>
                                         <input type="file" accept="image/*" required class="form-control" name="image" id="image" value="{{old('image')}}">
-                                        @error('image') <div class="text-danger">{{$message}}</div> @enderror
                                     </div>
+                                    @error('image') <div class="text-danger">{{$message}}</div> @enderror
                                 </div>
 
                                 <div class="col-sm-12 mb-2">
                                     <div class="form-group">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox">
+                                            <input name="status" checked class="form-check-input" type="checkbox">
                                             <label class="form-check-label">
                                                 Make Course Visible
                                             </label>
@@ -81,11 +86,15 @@
                                     </div>
                                 </div>
 
+                                <div class="col-xl-12 mb-2 col-xxl-12">
+                                    <label for="description">Description</label>
+                                    <textarea required value="{{old('description')}}" name="description" id="description"></textarea>
+                                    @error('description') <div class="text-danger">{{$message}}</div> @enderror
+                                </div>
+
                                 <div class="col-sm-6 mb-2">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
-
-
                             </div>
                         </form>
                     </div>
