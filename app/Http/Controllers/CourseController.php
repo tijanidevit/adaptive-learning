@@ -25,7 +25,7 @@ class CourseController extends Controller
             'category_id' => 'required|string',
             'title' => 'required|string',
             'price' => 'required|integer',
-            'image' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'description' => 'required|min:8',
         ]);
         if (!$request->status)

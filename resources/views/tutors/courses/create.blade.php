@@ -26,7 +26,7 @@
                 </div>
                 <div class="card-body">
                     <div class="basic-form">
-                        <form method="post" action="{{route('tutor_course_store')}}">
+                        <form method="post" action="{{route('tutor_course_store')}}" enctype="multipart/form-data">
                             @csrf
 
                             @if(session('error'))

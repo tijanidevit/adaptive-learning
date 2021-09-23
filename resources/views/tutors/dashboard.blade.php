@@ -84,7 +84,7 @@
                                     <div class="card-body">
                                         <div class="bootstrap-media">
                                             <div class="media mt-3">
-                                                <img class="mr-3 img-fluid" src="{{'storage/course_images/'}}" alt="{{$course->title}}">
+                                                <img class="mr-3 img-fluid" src="{{asset('storage/course_images/'.$course->image)}}" alt="{{$course->title}}">
                                                 <div class="media-body">
                                                     <h5 class="mt-0">{{$course->title}}</h5>
                                                     {{substr($course->description,0,120)}}
