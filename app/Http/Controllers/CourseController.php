@@ -50,7 +50,7 @@ class CourseController extends Controller
         if ($user_role = 0)
             return view('admin.courses.details', compact(['course_sections','course','course_students']));
         if ($user_role = 1)
-            return view('tutors.courses.details', compact(['course_sections','course','course_students']));
+            return view('tutors.courses.show', compact(['course_sections','course','course_students']));
         if ($user_role = 2)
             return view('students.courses.details', compact(['course_sections','course','course_students']));
     }
