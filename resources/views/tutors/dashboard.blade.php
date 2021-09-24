@@ -80,18 +80,21 @@
                         </div>
                         <div class="row">
                             @forelse($latest_courses as $course)
-                                <div class="col-lg-6">
-                                    <div class="card-body">
-                                        <div class="bootstrap-media">
-                                            <div class="media mt-3">
-                                                <img class="mr-3 img-fluid" src="{{asset('storage/course_images/'.$course->image)}}" alt="{{$course->title}}">
-                                                <div class="media-body">
-                                                    <h5 class="mt-0">{{$course->title}}</h5>
-                                                    {{substr($course->description,0,120)}}
+                                <div class="col-lg-4">
+                                    <a href="{{route('tutor.course.show', $course->id)}}">
+                                        <div class="card-body">
+                                            <div class="bootstrap-media">
+                                                <div class=" mt-3">
+                                                    <div>
+                                                        <img class="mr-3 img-fluid" src="{{asset('storage/course_images/'.$course->image)}}" alt="{{$course->title}}">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h4 class="mt-2">{{$course->title}}</h4>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 @empty
                                     <div class="col-lg-12">

@@ -42,7 +42,9 @@ class CourseController extends Controller
     {
         $user_role = $this->getUserRole();
         $course_students = $course->students;
-        $course_sections = $course->sections()->load('section_contents');
+        $course_sections = $course->sections()->eagerLoadRelations(['section_contents']);
+
+//        dd($course_students);
 
         //section_contents = $course_sections->section_contents;
 

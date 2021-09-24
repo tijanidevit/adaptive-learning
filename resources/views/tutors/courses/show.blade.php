@@ -2,125 +2,183 @@
 
 @section('body')
 
-    <div class="quixnav">
-        <div class="quixnav-scroll">
-            <ul class="metismenu" id="menu">
-                <li class="nav-label first">Main Menu</li>
-                <!-- <li><a href="index.html"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
-                </li> -->
-                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                            class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
-                    <ul aria-expanded="false">
-                        <li><a href="index-2.html">Dashboard 1</a></li>
-                        <li><a href="index2.html">Dashboard 2</a></li></ul>
-                </li>
+    <div class="content-body">
 
-                <li class="nav-label">Apps</li>
-                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                            class="icon icon-app-store"></i><span class="nav-text">Apps</span></a>
-                    <ul aria-expanded="false">
-                        <li><a href="app-profile.html">Profile</a></li>
-                        <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
-                            <ul aria-expanded="false">
-                                <li><a href="email-compose.html">Compose</a></li>
-                                <li><a href="email-inbox.html">Inbox</a></li>
-                                <li><a href="email-read.html">Read</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="app-calender.html">Calendar</a></li>
-                    </ul>
-                </li>
-                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                            class="icon icon-chart-bar-33"></i><span class="nav-text">Charts</span></a>
-                    <ul aria-expanded="false">
-                        <li><a href="chart-flot.html">Flot</a></li>
-                        <li><a href="chart-morris.html">Morris</a></li>
-                        <li><a href="chart-chartjs.html">Chartjs</a></li>
-                        <li><a href="chart-chartist.html">Chartist</a></li>
-                        <li><a href="chart-sparkline.html">Sparkline</a></li>
-                        <li><a href="chart-peity.html">Peity</a></li>
-                    </ul>
-                </li>
-                <li class="nav-label">Components</li>
-                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                            class="icon icon-world-2"></i><span class="nav-text">Bootstrap</span></a>
-                    <ul aria-expanded="false">
-                        <li><a href="ui-accordion.html">Accordion</a></li>
-                        <li><a href="ui-alert.html">Alert</a></li>
-                        <li><a href="ui-badge.html">Badge</a></li>
-                        <li><a href="ui-button.html">Button</a></li>
-                        <li><a href="ui-modal.html">Modal</a></li>
-                        <li><a href="ui-button-group.html">Button Group</a></li>
-                        <li><a href="ui-list-group.html">List Group</a></li>
-                        <li><a href="ui-media-object.html">Media Object</a></li>
-                        <li><a href="ui-card.html">Cards</a></li>
-                        <li><a href="ui-carousel.html">Carousel</a></li>
-                        <li><a href="ui-dropdown.html">Dropdown</a></li>
-                        <li><a href="ui-popover.html">Popover</a></li>
-                        <li><a href="ui-progressbar.html">Progressbar</a></li>
-                        <li><a href="ui-tab.html">Tab</a></li>
-                        <li><a href="ui-typography.html">Typography</a></li>
-                        <li><a href="ui-pagination.html">Pagination</a></li>
-                        <li><a href="ui-grid.html">Grid</a></li>
-
-                    </ul>
-                </li>
-
-                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                            class="icon icon-plug"></i><span class="nav-text">Plugins</span></a>
-                    <ul aria-expanded="false">
-                        <li><a href="uc-select2.html">Select 2</a></li>
-                        <li><a href="uc-nestable.html">Nestedable</a></li>
-                        <li><a href="uc-noui-slider.html">Noui Slider</a></li>
-                        <li><a href="uc-sweetalert.html">Sweet Alert</a></li>
-                        <li><a href="uc-toastr.html">Toastr</a></li>
-                        <li><a href="map-jqvmap.html">Jqv Map</a></li>
-                    </ul>
-                </li>
-                <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
-                            class="nav-text">Widget</span></a></li>
-                <li class="nav-label">Forms</li>
-                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                            class="icon icon-form"></i><span class="nav-text">Forms</span></a>
-                    <ul aria-expanded="false">
-                        <li><a href="form-element.html">Form Elements</a></li>
-                        <li><a href="form-wizard.html">Wizard</a></li>
-                        <li><a href="form-editor-summernote.html">Summernote</a></li>
-                        <li><a href="form-pickers.html">Pickers</a></li>
-                        <li><a href="form-validation-jquery.html">Jquery Validate</a></li>
-                    </ul>
-                </li>
-                <li class="nav-label">Table</li>
-                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                            class="icon icon-layout-25"></i><span class="nav-text">Table</span></a>
-                    <ul aria-expanded="false">
-                        <li><a href="table-bootstrap-basic.html">Bootstrap</a></li>
-                        <li><a href="table-datatable-basic.html">Datatable</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-label">Extra</li>
-                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                            class="icon icon-single-copy-06"></i><span class="nav-text">Pages</span></a>
-                    <ul aria-expanded="false">
-                        <li><a href="page-register.html">Register</a></li>
-                        <li><a href="page-login.html">Login</a></li>
-                        <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
-                            <ul aria-expanded="false">
-                                <li><a href="page-error-400.html">Error 400</a></li>
-                                <li><a href="page-error-403.html">Error 403</a></li>
-                                <li><a href="page-error-404.html">Error 404</a></li>
-                                <li><a href="page-error-500.html">Error 500</a></li>
-                                <li><a href="page-error-503.html">Error 503</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="page-lock-screen.html">Lock Screen</a></li>
-                    </ul>
-                </li>
-            </ul>
+        <div class="container-fluid">
+            <div class="row page-titles mx-0">
+                <div class="col-sm-6 p-md-0">
+                    <div class="welcome-text">
+                        <h4>{{$course->title}}</h4>
+                        <span class="ml-1">{{$course->category->category}}</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{route('tutor.course.index')}}">My Courses</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">{{$course->title}}</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="email-left-box generic-width px-0 mb-5">
+                                <div class="p-0">
+                                    <a href="email-compose.html" class="btn btn-primary btn-block">Compose</a>
+                                </div>
+                                <div class="mail-list mt-4">
+                                    <a href="email-inbox.html" class="list-group-item active"><i
+                                            class="fa fa-inbox font-18 align-middle mr-2"></i> Inbox <span
+                                            class="badge badge-primary badge-sm float-right">198</span> </a>
+                                    <a href="javascript:void()" class="list-group-item"><i
+                                            class="fa fa-paper-plane font-18 align-middle mr-2"></i>Sent</a> <a href="javascript:void()" class="list-group-item"><i
+                                            class="fa fa-star font-18 align-middle mr-2"></i>Important <span
+                                            class="badge badge-danger badge-sm text-white float-right">47</span>
+                                    </a>
+                                    <a href="javascript:void()" class="list-group-item"><i
+                                            class="mdi mdi-file-document-box font-18 align-middle mr-2"></i>Draft</a><a href="javascript:void()" class="list-group-item"><i
+                                            class="fa fa-trash font-18 align-middle mr-2"></i>Trash</a>
+                                </div>
+                                <div class="intro-title d-flex justify-content-between">
+                                    <h5>Categories</h5>
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </div>
+                                <div class="mail-list mt-4">
+                                    <a href="email-inbox.html" class="list-group-item"><span class="icon-warning"><i
+                                                class="fa fa-circle" aria-hidden="true"></i></span>
+                                        Work </a>
+                                    <a href="email-inbox.html" class="list-group-item"><span class="icon-primary"><i
+                                                class="fa fa-circle" aria-hidden="true"></i></span>
+                                        Private </a>
+                                    <a href="email-inbox.html" class="list-group-item"><span class="icon-success"><i
+                                                class="fa fa-circle" aria-hidden="true"></i></span>
+                                        Support </a>
+                                    <a href="email-inbox.html" class="list-group-item"><span class="icon-dpink"><i
+                                                class="fa fa-circle" aria-hidden="true"></i></span>
+                                        Social </a>
+                                </div>
+                            </div>
+                            <div class="email-right-box ml-0 ml-sm-4 ml-sm-0">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="right-box-padding">
+                                            <div class="toolbar" role="toolbar">
+                                                <div class="btn-group mb-4">
+                                                    <button type="button" class="btn btn-dark"><i
+                                                            class="fa fa-archive"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-dark"><i
+                                                            class="fa fa-exclamation-circle"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-dark"><i
+                                                            class="fa fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="btn-group mb-4">
+                                                    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"><i class="fa fa-folder"></i> <b
+                                                            class="caret m-l-5"></b>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="javascript: void(0);">Social</a>
+                                                        <a class="dropdown-item" href="javascript: void(0);">Promotions</a>
+                                                        <a class="dropdown-item" href="javascript: void(0);">Updates</a>
+                                                        <a class="dropdown-item" href="javascript: void(0);">Forums</a>
+                                                    </div>
+                                                </div>
+                                                <div class="btn-group mb-4">
+                                                    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i> <b
+                                                            class="caret m-l-5"></b>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="javascript: void(0);">Updates</a>
+                                                        <a class="dropdown-item" href="javascript: void(0);">Social</a>
+                                                        <a class="dropdown-item" href="javascript: void(0);">Promotions</a>
+                                                        <a class="dropdown-item" href="javascript: void(0);">Forums</a>
+                                                    </div>
+                                                </div>
+                                                <div class="btn-group mb-4">
+                                                    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">More <span
+                                                            class="caret m-l-5"></span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="javascript: void(0);">Mark as
+                                                            Unread</a>
+                                                        <a class="dropdown-item" href="javascript: void(0);">Add to
+                                                            Tasks</a>
+                                                        <a class="dropdown-item" href="javascript: void(0);">Add
+                                                            Star</a>
+                                                        <a class="dropdown-item" href="javascript: void(0);">Mute</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="read-content">
+                                                <div class="media pt-3">
+                                                    <img class="mr-4 img-fluid" alt="image" src="{{asset('storage/course_images/'.$course->image)}}">
+                                                    <div class="media-body">
+                                                        <h5 class="text-primary">Ingredia Nutrisha</h5>
+                                                        <p class="mb-0">20 May 2018</p>
+                                                    </div>
+                                                    <a href="javascript:void()" class="text-muted "><i
+                                                            class="fa fa-reply"></i> </a>
+                                                    <a href="javascript:void()" class="text-muted ml-3"><i
+                                                            class="fa fa-long-arrow-right"></i> </a>
+                                                    <a href="javascript:void()" class="text-muted ml-3"><i
+                                                            class="fa fa-trash"></i></a>
+                                                </div>
+                                                <hr>
+                                                <div class="media mb-4 mt-5">
+                                                    <div class="media-body"><span class="pull-right">07:23 AM</span>
+                                                        <h5 class="my-1 text-primary">{{$course->title}}</h5>
+                                                        <p class="read-content-email">{{$course->title}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="read-content-body">
+                                                    <h5 class="mb-5">Hi,Ingredia,</h5>
+                                                    <p><strong>Ingredia Nutrisha,</strong> A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture</p>
+                                                    <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for
+                                                        the far World of Grammar. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+                                                    </p>
+                                                    <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut
+                                                        metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum
+                                                        rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar,</p>
+                                                    <h5 class="pt-3">Kind Regards</h5>
+                                                    <p>Mr Smith</p>
+                                                    <hr>
+                                                </div>
+                                                <div class="read-content-attachment">
+                                                    <h6><i class="fa fa-download mb-2"></i> Attachments
+                                                        <span>(3)</span></h6>
+                                                    <div class="row attachment">
+                                                        <div class="col-auto">
+                                                            <a href="javascript:void()" class="text-muted">My-Photo.png</a>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <a href="javascript:void()" class="text-muted">My-File.docx</a>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <a href="javascript:void()" class="text-muted">My-Resume.pdf</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="form-group pt-3">
+                                                    <textarea class="w-100" name="write-email" id="write-email" cols="30" rows="5" placeholder="It's really an amazing.I want to know more about it..!"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="text-right">
+                                                <button class="btn btn-primary btn-sl-sm mb-5" type="button">Send</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
     </div>
 
 @endsection
