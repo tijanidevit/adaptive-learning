@@ -25,6 +25,9 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="email-left-box generic-width px-0 mb-5">
+                                @if(session('success'))
+                                    <div class="alert alert-success">{{session('success')}}</div>
+                                @endif
                                 <div class="p-0">
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Add Course Section</button>
                                     <!-- Modal -->
@@ -37,11 +40,27 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                                                    <form action="{{route('tutor_course_section_store', $course->id)}}" method="post">
+                                                        @csrf
+                                                        <div class="form-group">
+                                                            <label for="section">Section Title</label>
+                                                            <input class="form-control" type="text" name="section" id="section" value="{{old('section')}}">
+                                                        </div>
+
+
+                                                        <div class="form-group">
+                                                            <label for="needed_points">Required Points</label>
+                                                            <input class="form-control" required type="text" name="needed_points" id="needed_points" value="{{old('needed_points') ?: 0}}">
+                                                            @error('needed_points') <div class="text-danger">{{$message}}</div> @enderror
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <button class="btn btn-primary">Submit</button>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>>
                                                 </div>
                                             </div>
                                         </div>

@@ -51,4 +51,7 @@ Route::group(['prefix' => 'tutors', 'middleware' => 'tutor_auth'], function() {
     Route::post('/courses', [App\Http\Controllers\CourseController::class, 'store'])->name('tutor_course_store');
     Route::get('/courses/{course}', [App\Http\Controllers\CourseController::class, 'show'])->name('tutor.course.show');
 
+
+    Route::post('/courses/{course}/course_sections', [App\Http\Controllers\CourseSectionController::class, 'store'])->name('tutor_course_section_store');
+
 });
